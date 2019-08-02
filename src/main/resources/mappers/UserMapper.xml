@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="com.example.demo.bean.UserBean">
         <id column="id" property="id" />
         <result column="userName" property="userName" />
+        <result column="passWord" property="passWord"/>
     </resultMap>
 
     <select id="getUser" resultMap="BaseResultMap">
@@ -16,4 +17,13 @@
     <select id="getUserById" resultMap="BaseResultMap">
         select * from user where id = #{id};
     </select>
+
+    <select id="getUserName" resultMap="BaseResultMap">
+        select * from user where userName = #{userName} and passWord = #{passWord};
+    </select>
+
+    <delete id="delectUser" >
+        DELETE from user where id =#{id};
+
+    </delete>
 </mapper>

@@ -8,5 +8,5 @@ public class UserBean {
 
     private  Integer id;
     private String userName;
-
+    private String passWord;
 }

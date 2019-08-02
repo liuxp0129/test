@@ -25,4 +25,15 @@ public class UserServiceImpl  implements UserService {
 
         return  userMapper.getUserById(id);
     }
+
+    @Override
+    public UserBean getUserName(String userName, String passWord) {
+        return userMapper.getUserName(userName,passWord);
+    }
+
+    @Override
+    public Integer delectUser(Integer id) {
+
+        return userMapper.delectUser(id);
+    }
 }

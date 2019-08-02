@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.bean.UserBean;
 import com.example.demo.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,4 +36,20 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("/getUserName")
+    @ResponseBody
+    public UserBean getUserName(@Param("userName") String userName, @Param("passWord")String passWord){
+
+      UserBean user =  userService.getUserName(userName,passWord);
+      return user;
+    }
+    @RequestMapping("/delectUser")
+    @ResponseBody
+    public String delectUser(Integer id){
+      Integer i=  userService.delectUser(id);
+      if (i<=0){
+          return "hh";
+      }
+      return "11";
+    }
 }

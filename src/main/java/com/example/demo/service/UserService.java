@@ -9,4 +9,8 @@ public interface UserService {
     public List<UserBean> getUser();
 
     UserBean getUserById(Integer id);
+
+    UserBean getUserName(String userName, String passWord);
+
+    Integer delectUser(Integer id);
 }

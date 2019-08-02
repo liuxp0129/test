@@ -7,10 +7,13 @@
         <id column="id" property="id" />
         <result column="userName" property="userName" />
     </resultMap>
+
     <select id="getUser" resultMap="BaseResultMap">
 
         select * from user;
     </select>
 
-
+    <select id="getUserById" resultMap="BaseResultMap">
+        select * from user where id = #{id};
+    </select>
 </mapper>

@@ -19,4 +19,10 @@ public class UserServiceImpl  implements UserService {
     public List<UserBean> getUser() {
         return userMapper.getUser();
     }
+
+    @Override
+    public UserBean getUserById(Integer id) {
+
+        return  userMapper.getUserById(id);
+    }
 }

@@ -17,10 +17,22 @@ public class UserController {
     @Autowired
     UserService userService;
 
+
+
     @RequestMapping("/getUser")
     @ResponseBody
     public List<UserBean> getUser() {
 
         return userService.getUser();
     }
+
+    @ResponseBody
+    @RequestMapping("/getUserById")
+    public UserBean getUserById(Integer id){
+
+        UserBean user = userService.getUserById(id);
+
+        return user;
+    }
+
 }

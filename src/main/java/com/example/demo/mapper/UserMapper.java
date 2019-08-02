@@ -9,4 +9,6 @@ public interface UserMapper {
 
 
     public List<UserBean> getUser();
+
+    UserBean getUserById(Integer id);
 }

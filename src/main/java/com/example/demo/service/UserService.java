@@ -7,4 +7,6 @@ import java.util.List;
 public interface UserService {
 
     public List<UserBean> getUser();
+
+    UserBean getUserById(Integer id);
 }
